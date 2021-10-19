@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+.navbar {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #293241;
+  box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8),
+    -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+  /* opacity: 0.9; */
+}
+
+.navbar h1 {
+  color: white;
+  font-size: 3vw;
+  margin-top: 30px;
+  font-family: "Lalezar", cursive;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}

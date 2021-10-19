@@ -1,0 +1,23 @@
+.footerContainer {
+  display: flex;
+  height: 10vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #293241;
+  box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8),
+    -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+  /* opacity: 0.9; */
+}
+
+.footerContainer h3 {
+  color: white;
+}
+
+.footerReact {
+  display: flex;
+  max-width: 50px;
+}

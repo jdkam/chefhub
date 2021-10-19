@@ -10,12 +10,12 @@
   background-color: #293241;
   box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8),
     -12px 0 8px -4px rgba(31, 73, 125, 0.8);
-  /* opacity: 0.9; */
+  opacity: 0.95;
 }
 
 .navbar h1 {
   color: white;
-  font-size: 3vw;
+  font-size: 30px;
   margin-top: 30px;
   font-family: "Lalezar", cursive;
 }

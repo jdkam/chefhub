@@ -5,8 +5,29 @@ import React, { useEffect, useState } from "react";
 import Nav from "./components/navbar/Nav";
 import { BackTop } from "antd";
 import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from "./components/About/About";
 
 function App() {
+  return (
+    <div className="page-container">
+      <div className="content-wrap">
+        <Router>
+          <Nav />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </Router>
+      </div>
+      <BackTop />
+      <Footer />
+    </div>
+    // </div>
+  );
+}
+
+function Home() {
   const APP_ID = "05cb9da0";
   const APP_KEY = "7e7a9c6b56985cf3c1d72ad1b6ad714c";
   const [query, setQuery] = useState("chicken");
@@ -52,15 +73,14 @@ function App() {
     //set the value of searched to true, indicating we have searched for something
     setsearched(true);
   };
-
   return (
-    <div className="App">
-      <Nav />
+    <div>
       <form onSubmit={getSearch} className="search-form">
         <button className="search-button" type="submit">
           Search
         </button>
         <input
+          placeholder="Type an ingredient to see relevant recipes"
           className="search-bar"
           type="text"
           value={search}
@@ -68,7 +88,7 @@ function App() {
         />
       </form>
       {searched ? (
-        <h4 className="searched">Showing results for.. {query}</h4>
+        <h4 className="searched">Showing results for.. "{query}"</h4>
       ) : null}
       <div className="recipes">
         {recipes.map((recipes, i) => (
@@ -81,9 +101,6 @@ function App() {
           />
         ))}
       </div>
-      <BackTop />
-      <strong className="site-back-top-basic"> </strong>
-      <Footer />
     </div>
   );
 }
